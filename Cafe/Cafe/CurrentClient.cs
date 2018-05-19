@@ -28,6 +28,16 @@ namespace Cafe
             get { return tryCount; }
         }
 
+        public void StateIncrement()
+        {
+            state++;
+        }
+
+        public void StateDecrement()
+        {
+            state--;
+        }
+
         public int Pay()
         {
             if (state == 0) return -10;
