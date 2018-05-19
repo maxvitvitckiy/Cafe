@@ -18,6 +18,11 @@ namespace Cafe
             state = rand.Next(1, 2);
         }
 
+        public int State
+        {
+            get { return state; }
+        }
+
         public int Pay()
         {
             if (state == 0) return -10;
