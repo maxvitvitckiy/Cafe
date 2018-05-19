@@ -23,5 +23,10 @@ namespace Cafe
             if (state == 0) return -10;
             else return state * 10;
         }
+
+        public int RandomWish(int n)
+        {
+            return new Random().Next(0, n - 1);
+        }
     }
 }
