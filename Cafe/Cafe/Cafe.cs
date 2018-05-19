@@ -13,7 +13,16 @@ namespace Cafe
 
         public Cafe()
         {
+            balance = 10;
+            food.Add("Tea");
+            food.Add("Coffee");
+            food.Add("Ice cream");
+        }
 
+        public void Play()
+        {
+            Console.Title = "CAFE";
+            Console.WriteLine("CURRENT BALANCE: " );
         }
     }
 }
