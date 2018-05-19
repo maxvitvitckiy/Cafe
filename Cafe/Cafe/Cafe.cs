@@ -10,6 +10,7 @@ namespace Cafe
     {
         int balance;
         List<string> food;
+        CurrentClient client;
 
         public Cafe()
         {
@@ -17,12 +18,20 @@ namespace Cafe
             food.Add("Tea");
             food.Add("Coffee");
             food.Add("Ice cream");
+            client = new CurrentClient();
+            Play();
         }
 
         public void Play()
         {
             Console.Title = "CAFE";
-            Console.WriteLine("CURRENT BALANCE: " );
+            Console.WriteLine("CURRENT BALANCE: " + balance);
+            string sState;
+            do
+            {
+                if()
+                Console.WriteLine("Client state: " + client.);
+            }
         }
     }
 }
