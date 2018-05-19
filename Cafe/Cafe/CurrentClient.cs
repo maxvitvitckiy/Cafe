@@ -23,6 +23,11 @@ namespace Cafe
             get { return state; }
         }
 
+        public int TryCount
+        {
+            get { return tryCount; }
+        }
+
         public int Pay()
         {
             if (state == 0) return -10;

@@ -22,16 +22,24 @@ namespace Cafe
             Play();
         }
 
+        private string ClientState()
+        {
+
+            if (client.State == 0) return "Angry";
+            else if (client.State == 1) return "Dissatisfied";
+            else if (client.State == 2) return "Neutral";
+            else if (client.State == 3) return "Happy";
+            else return "Error";
+        }
+
         public void Play()
         {
-            Console.Title = "CAFE";
-            Console.WriteLine("CURRENT BALANCE: " + balance);
             string sState;
             do
             {
-                if()
-                Console.WriteLine("Client state: " + client.);
-            }
+                sState = ClientState();
+
+            } while (balance > 0 && balance < 100);
         }
     }
 }
