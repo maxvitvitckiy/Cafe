@@ -15,6 +15,7 @@ namespace Cafe
         public Cafe()
         {
             balance = 10;
+            food = new List<string>();
             food.Add("Tea");
             food.Add("Coffee");
             food.Add("Ice cream");

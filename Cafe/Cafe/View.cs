@@ -12,7 +12,6 @@ namespace Cafe
 
         public void Game(int balance, int count, string state)
         {
-            Console.Title = "Game \"Cafe\"";
             
             Console.WriteLine("Current cafe balance: {0}", balance);
             Console.WriteLine("Client {0}, count of tries: {1}", state, count);

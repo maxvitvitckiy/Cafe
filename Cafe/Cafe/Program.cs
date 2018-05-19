@@ -8,6 +8,10 @@ namespace Cafe
 {
     class Program
     {
-
+        static void Main()
+        {
+            Cafe start = new Cafe();
+            Console.ReadLine();
+        }
     }
 }
