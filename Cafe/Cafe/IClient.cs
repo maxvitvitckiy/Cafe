@@ -8,7 +8,7 @@ namespace Cafe
 {
     interface IClient
     {
-        int RandomWish();
+        int RandomWish(int a);
         int Pay();
     }
 }
