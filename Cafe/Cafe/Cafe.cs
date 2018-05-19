@@ -8,5 +8,12 @@ namespace Cafe
 {
     class Cafe
     {
+        int balance;
+        List<string> food;
+
+        public Cafe()
+        {
+
+        }
     }
 }
