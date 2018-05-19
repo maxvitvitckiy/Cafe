@@ -46,7 +46,7 @@ namespace Cafe
                     client = new CurrentClient();
                 }
                 v.Game(balance,trycount, ClientState());
-                if(v.makeChoice == -1)
+                if(v.makeChoice() == -1)
                 {
                     Console.WriteLine("GAME OVER");
                     Environment.Exit(0);
