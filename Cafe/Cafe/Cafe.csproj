@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cafe.cs" />
     <Compile Include="CurrentClient.cs" />
     <Compile Include="IClient.cs" />
     <Compile Include="Program.cs" />
