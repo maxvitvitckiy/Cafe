@@ -15,7 +15,7 @@ namespace Cafe
         {
             tryCount = 3;
             Random rand = new Random();
-            state = rand.Next(1, 2);
+            state = rand.Next(1, 3);
         }
 
         public int State
@@ -31,11 +31,13 @@ namespace Cafe
         public void StateIncrement()
         {
             state++;
+            tryCount--;
         }
 
         public void StateDecrement()
         {
             state--;
+            tryCount--;
         }
 
         public int Pay()
@@ -46,7 +48,7 @@ namespace Cafe
 
         public int RandomWish(int n)
         {
-            return new Random().Next(0, n - 1);
+            return new Random().Next(0, n);
         }
     }
 }

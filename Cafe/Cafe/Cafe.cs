@@ -35,28 +35,38 @@ namespace Cafe
 
         public void Play()
         {
-            string sState;
-            int trycount;
+            int choice, wish;
             do
             {
-                trycount = client.TryCount;
                 View v = new View();
-                if(trycount == 0 || client.State == 0 || client.State == 3)
+                if(client.TryCount == 0 || client.State == 0 || client.State == 3)
                 {
-                    client.Pay();
+                    balance += client.Pay();
+                    Console.WriteLine("You`ve earned {0}", client.Pay());
+                    Console.WriteLine("\n{0}",new String('*', 30));
+                    Console.WriteLine("You`ve got a new client!");
                     client = new CurrentClient();
                 }
-                v.Game(balance,trycount, ClientState());
-                if(v.makeChoice() == -1)
+                v.Game(balance, client.TryCount, ClientState());
+                wish = client.RandomWish(food.Count);
+                choice = v.makeChoice();
+                if (choice == -1)
                 {
-                    Console.WriteLine("GAME OVER");
+                    Console.WriteLine("\nGAME OVER");
                     Environment.Exit(0);
                 }
-                if (v.makeChoice() == client.RandomWish(food.Count)) client.StateIncrement();
-                else client.StateDecrement();
+                if (choice == wish)
+                    client.StateIncrement();
+                else
+                    client.StateDecrement();
+
+                v.current(food[choice], food[wish]);
             } while (balance > 0 && balance < 100);
-            if (balance >= 100) Console.WriteLine("You win! Congratulations!");
-            else Console.WriteLine("You lose.");
+
+            if (balance >= 100)
+                Console.WriteLine("You win! Congratulations!");
+            else
+                Console.WriteLine("You lose.");
         }
     }
 }

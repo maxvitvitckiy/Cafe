@@ -9,23 +9,25 @@ namespace Cafe
     class View
     {
 
-
         public void Game(int balance, int count, string state)
         {
-            
             Console.WriteLine("Current cafe balance: {0}", balance);
             Console.WriteLine("Client {0}, count of tries: {1}", state, count);
-
-
         }
 
         public int makeChoice()
         {
             int i = -1;
-            Console.WriteLine("\nMenu:\n1. Tea\n2. Coffee\n3. Ice-cream\nTo exit - 0");
+            Console.WriteLine("\nMenu:\n1. Tea\n2. Coffee\n3. Ice-cream\n0. Exit");
             Console.Write("Your choice: ");
             int.TryParse(Console.ReadLine(), out (i));
             return i - 1;
+        }
+
+        public void current(string choice, string wish)
+        {
+            Console.WriteLine("\nClient`s wish was {0}", wish);
+            Console.WriteLine("Your choice was {0}", choice);
         }
     }
 }

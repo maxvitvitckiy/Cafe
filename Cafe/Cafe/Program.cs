@@ -10,6 +10,7 @@ namespace Cafe
     {
         static void Main()
         {
+            Console.Title = "CAFFEE";
             Cafe start = new Cafe();
             Console.ReadLine();
         }
