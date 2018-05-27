@@ -33,7 +33,7 @@ namespace Cafe
 
         public bool endCheck()
         {
-            if (balance >= 0 && balance < 10)
+            if (balance >= 0 && balance < 100)
                 return false;
             return true;
         }
