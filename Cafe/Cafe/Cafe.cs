@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Cafe
 {
@@ -16,25 +16,25 @@ namespace Cafe
         {
             balance = 10;
             food = new List<string>();
-            food.Add("Tea");
-            food.Add("Coffee");
-            food.Add("Ice cream");
+            food.Add("Tea".ToUpper());
+            food.Add("Coffee".ToUpper());
+            food.Add("Ice cream".ToUpper());
             Play();
         }
 
         private string ClientState()
         {
 
-            if (client.State == 0) return "Angry";
-            else if (client.State == 1) return "Dissatisfied";
-            else if (client.State == 2) return "Neutral";
-            else if (client.State == 3) return "Happy";
+            if (client.State == 0) return "Angry".ToUpper();
+            else if (client.State == 1) return "Dissatisfied".ToUpper();
+            else if (client.State == 2) return "Neutral".ToUpper();
+            else if (client.State == 3) return "Happy".ToUpper();
             else return "Error";
         }
 
         public bool endCheck()
         {
-            if (balance > 0 && balance < 100)
+            if (balance >= 0 && balance < 100)
                 return false;
             return true;
         }
@@ -57,7 +57,7 @@ namespace Cafe
 
                     if (endCheck())
                         break;
-
+                    Thread.Sleep(1500);
                     Console.WriteLine("You`ve got a new client!");
                     client = new CurrentClient();
                 }
@@ -77,6 +77,8 @@ namespace Cafe
                     client.StateDecrement();
 
                 v.current(food[choice], food[wish]);
+                Thread.Sleep(1000);
+
             }
 
             Console.WriteLine("\nYou balance is {0}", balance);
