@@ -21,10 +21,9 @@ namespace Cafe
             food.Add("Ice cream".ToUpper());
             Play();
         }
-
+        
         private string ClientState()
         {
-
             if (client.State == 0) return "Angry".ToUpper();
             else if (client.State == 1) return "Dissatisfied".ToUpper();
             else if (client.State == 2) return "Neutral".ToUpper();
@@ -34,26 +33,27 @@ namespace Cafe
 
         public bool endCheck()
         {
-            if (balance >= 0 && balance < 100)
+            if (balance >= 0 && balance < 10)
                 return false;
             return true;
         }
 
         public void Play()
         {
+            Start:
             int choice, wish;
             View v = new View();
             client = new CurrentClient();
-
-            while(true)
+            
+            while (true)
             {
                 if (endCheck())
                     break;
-                if(client.TryCount == 0 || client.State == 0 || client.State == 3)
+                if (client.TryCount == 0 || client.State == 0 || client.State == 3)
                 {
                     balance += client.Pay();
                     Console.WriteLine("You`ve earned {0}", client.Pay());
-                    Console.WriteLine("\n{0}",new String('*', 30));
+                    Console.WriteLine("\n{0}", new String('*', 30));
 
                     if (endCheck())
                         break;
@@ -85,7 +85,34 @@ namespace Cafe
             if (balance >= 100)
                 Console.WriteLine("You win! Congratulations!");
             else
+            {
                 Console.WriteLine("You lose.\nGAME OVER");
+            }
+
+            Console.WriteLine("Start a new game - 1");
+            Console.WriteLine("To exit press any key");
+            try
+            {
+                if (Convert.ToInt32(Console.ReadLine()) == 1)
+                {
+                    Console.Clear();
+                    balance = 10;
+                    goto Start;
+                }
+
+                else
+                {
+                    Console.WriteLine("bb");
+                    Thread.Sleep(1500);
+                    Environment.Exit(1);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("bb");
+                Thread.Sleep(1500);
+                Environment.Exit(1);
+            }
         }
     }
 }

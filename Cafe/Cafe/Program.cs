@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Cafe
 {
@@ -13,7 +14,6 @@ namespace Cafe
             Console.Title = "CAFE";
             Cafe start = new Cafe();
 
-            Console.ReadLine();
         }
     }
 }
