@@ -102,14 +102,14 @@ namespace Cafe
 
                 else
                 {
-                    Console.WriteLine("bb");
+                    Console.WriteLine("Come back later!");
                     Thread.Sleep(1500);
                     Environment.Exit(1);
                 }
             }
             catch
             {
-                Console.WriteLine("bb");
+                Console.WriteLine("Come back later!");
                 Thread.Sleep(1500);
                 Environment.Exit(1);
             }
