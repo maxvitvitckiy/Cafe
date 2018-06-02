@@ -86,6 +86,7 @@ namespace Cafe
                 Console.WriteLine("You win! Congratulations!");
             else
                 Console.WriteLine("You lose.\nGAME OVER");
+
         }
     }
 }
