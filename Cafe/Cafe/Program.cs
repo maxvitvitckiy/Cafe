@@ -13,8 +13,7 @@ namespace Cafe
         {
             Console.Title = "CAFE";
             Cafe start = new Cafe();
-            
-            Console.ReadLine();
+
         }
     }
 }
